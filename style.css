@@ -1,0 +1,15 @@
+
+#main-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
+#headerImage {
+ 
+  height: 250px;
+  width: 250px;
+}
