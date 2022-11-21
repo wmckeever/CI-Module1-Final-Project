@@ -29,17 +29,20 @@ let searchButton = document.querySelector('#searchButton')
 //*<----------------------------------------->*//
 
 searchButton.addEventListener('click', (event) => {
+  event.preventDefault();
     console.log("Search Button Works")
     console.log("User Iput is working and prints out:")
     console.log(userInput.value);  
-  event.preventDefault();
 
-  fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=63aa00c3b9a14b4d81e35606c1528c2c&${userInput}`)
+  fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=63aa00c3b9a14b4d81e35606c1528c2c&ingredients=${userInput.value}`)
     .then(function(response){
           return response.json()
     })
     .then(function(data){
       console.log(data);
            })
-
+           .catch(function(error){
+            console.log("This is the error:");
+            console.log(error);
+          })
           });
