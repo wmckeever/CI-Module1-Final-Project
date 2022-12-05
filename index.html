@@ -5,40 +5,143 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
-  <title>Document</title>
+  <title>Search By Ingredients</title>
 </head>
+
 <body>
 
+  <img id="header-image" src="./images/cooking-banner-7166200_1920.jpg" class="img-fluid" alt="...">
+  
+  
   <div id="main-container" class="container">
-  <h1 id="mainHeader">Code Immersives Final Project</h1>
 
-    <!-- <div id="headerImage">
-      <img src="./images/headerImage.png" alt="Header Image"><br><br>
-    </div> -->
-
+       <p id="instructions"> Simply type in your list ingredients (separated by a comma ,) and our recipe finder will return several mouth watering dishes for you to try. All all of which are made with items already found in your cupboard.</p>
 
   <div class="input-group mb-3">
     <input type="text" id="userInput" class="form-control" placeholder="enter ingredients" aria-label="Recipient's username" aria-describedby="button-addon2">
     <button class="btn btn-primary" type="button" id="searchButton">search</button>
   </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</form>
 </div>
+
+
+<!-- div containing the recipe cardsrow 1-->
+
+<div id="card-container1" class="hidden">
+  <div id="card1" class="card1" style="width: 18rem;">
+    <img src="./images/default-ingredient-images/image1.jpg" class="card1-img-top" alt="...">
+    <div class="card1-body">
+      <h5 class="card1-title card-title">Recipe</h5>
+      <p class="card1-text">...</p>
+      <!-- <a href="#" class="btn btn-primary ">Get the recipe</a> -->
+      <button type="button" class="btn btn-primary modal-button1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Get the recipe
+      </button>
+    </div>
+  </div>
+  
+  <div id="card2" class="card2" style="width: 18rem;">
+    <img src="./images/default-ingredient-images/image2.webp" class="card2-img-top" alt="...">
+    <div class="card2-body">
+      <h5 class="card2-title card-title">Recipe</h5>
+      <p class="card2-text">...</p>
+      <!-- <a href="#" class="btn btn-primary">Get the recipe</a> -->
+      <button type="button" class="btn btn-primary modal-button2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Get the recipe
+      </button>
+    </div>
+  </div>
+  
+  <div id="card3" class="card2" style="width: 18rem;">
+    <img src="./images/default-ingredient-images/image3.jpg" class="card3-img-top" alt="...">
+    <div class="card3-body">
+      <h5 class="card3-title card-title">Recipe</h5>
+      <p class="card3-text">...</p>
+      <!-- <a href="#" class="btn btn-primary">Get the recipe</a> -->
+      <button type="button" class="btn btn-primary modal-button3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Get the recipe
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- div containing the recipe cards row 2-->
+
+<div id="card-container2" class="hidden">
+  <div class="card4" style="width: 18rem;">
+    <img src="./images/default-ingredient-images/image4.jpg" class="card4-img-top" alt="...">
+    <div class="card4-body">
+      <h5 class="card4-title card-title">Recipe</h5>
+      <p class="card4-text">...</p>
+      <button type="button" class="btn btn-primary modal-button4" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Get the recipe
+      </button>
+    </div>
+  </div>
+  
+  <div class="card5" style="width: 18rem;">
+    <img src="./images/default-ingredient-images/image5.jpg" class="card5-img-top" alt="...">
+    <div class="card5-body">
+      <h5 class="card5-title card-title">Recipe</h5>
+      <p class="card5-text">...</p>
+      <button type="button" class="btn btn-primary modal-button5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Get the recipe
+      </button>
+    </div>
+  </div>
+  
+  <div class="card6" style="width: 18rem;">
+    <img src="./images/default-ingredient-images/image6.jpg" class="card6-img-top" alt="...">
+    <div class="card6-body">
+      <h5 class="card6-title card-title">Recipe</h5>
+      <p class="card6-text">...</p>
+      <button type="button" class="btn btn-primary modal-button6" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Get the recipe
+      </button>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <img src="" id="modal-recipe-image" alt="image loading...">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary ">Save recipe</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- script links-->
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
   </script>
 
