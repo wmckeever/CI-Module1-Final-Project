@@ -21,6 +21,10 @@ let recipeID4 = "";
 let recipeID5 = "";
 let recipeID6 = "";
 
+let bookmarks = [];
+
+let randomFood = document.querySelector("#random-food");
+
 
 //*<------------- querySelectors ------------->*//
 //*<----------------------------------------->*//
@@ -35,12 +39,14 @@ let modalButton4 = document.querySelector('.modal-button4');
 let modalButton5 = document.querySelector('.modal-button5');
 let modalButton6 = document.querySelector('.modal-button6');
 
+//* modal save buttons //
 
+let saveButton = document.querySelector('#save-button');
+let saveSpot = document.querySelector('ul');
 
-
-let modalRecipeImage = document.querySelector('#modal-recipe-image')
-
-
+//* modal image area
+let modalRecipeImage = document.querySelector('#modal-recipe-image');
+let modalTitle = document.querySelector('.modal-title');
 
 
 //*-------------------------------------------------------------//
@@ -75,8 +81,27 @@ let card6Text = document.querySelector('.card6-text');
 
 //*<------------- variable resets ------------->*//
 //*<------------------------------------------>*//
-userInput.value = "";
+try {
+  userInput.value = "";
 
+
+//*<------------- random food trivia API call -------------->*//
+//*<------------------------------------------------------->*//
+
+fetch(`https://api.spoonacular.com/food/trivia/random?apiKey=63aa00c3b9a14b4d81e35606c1528c2c`)
+  //fetch(`https://api.spoonacular.com/recipes/${recipeID1}/card?${myAPIKey}`)
+    .then(function(response){
+      return response.json()
+    })
+    .then(function(data){
+      console.log(data.text);
+      randomFood.innerText = data.text;
+
+    })
+.catch(function(error){
+  console.log("This is the error:");
+  console.log(error);
+});
 
 
 
@@ -162,6 +187,10 @@ fetch(`https://api.spoonacular.com/recipes/${recipeID1}/card?apiKey=63aa00c3b9a1
       console.log(data.url);
       //change image url here
      modalRecipeImage.src = data.url;
+      bookmarks.push(data.url);
+     
+     console.log(bookmarks);
+
     })
 .catch(function(error){
   console.log("This is the error:");
@@ -182,6 +211,11 @@ fetch(`https://api.spoonacular.com/recipes/${recipeID2}/card?apiKey=63aa00c3b9a1
       console.log(data.url);
       //change image url here
      modalRecipeImage.src = data.url;
+     bookmarks.push(data.url);
+     
+     console.log(bookmarks);
+
+
     })
 .catch(function(error){
   console.log("This is the error:");
@@ -202,6 +236,11 @@ fetch(`https://api.spoonacular.com/recipes/${recipeID3}/card?apiKey=63aa00c3b9a1
       console.log(data.url);
       //change image url here
      modalRecipeImage.src = data.url;
+     bookmarks.push(data.url);
+     
+     console.log(bookmarks);
+
+
     })
 .catch(function(error){
   console.log("This is the error:");
@@ -222,6 +261,10 @@ fetch(`https://api.spoonacular.com/recipes/${recipeID4}/card?apiKey=63aa00c3b9a1
       console.log(data.url);
       //change image url here
      modalRecipeImage.src = data.url;
+     bookmarks.push(data.url);
+     
+     console.log(bookmarks);
+
     })
 .catch(function(error){
   console.log("This is the error:");
@@ -242,6 +285,11 @@ fetch(`https://api.spoonacular.com/recipes/${recipeID5}/card?apiKey=63aa00c3b9a1
       console.log(data.url);
       //change image url here
      modalRecipeImage.src = data.url;
+     bookmarks.push(data.url);
+     
+     console.log(bookmarks);
+
+
     })
 .catch(function(error){
   console.log("This is the error:");
@@ -262,6 +310,11 @@ fetch(`https://api.spoonacular.com/recipes/${recipeID6}/card?apiKey=63aa00c3b9a1
       console.log(data.url);
       //change image url here
      modalRecipeImage.src = data.url;
+     bookmarks.push(data.url);
+     
+     console.log(bookmarks);
+
+
     })
 .catch(function(error){
   console.log("This is the error:");
@@ -269,8 +322,24 @@ fetch(`https://api.spoonacular.com/recipes/${recipeID6}/card?apiKey=63aa00c3b9a1
 })
 });
 
-//*<------------- API Dom Placement ------------->*//
-//*<-------------------------------------------->*//
+//*<------------- save recipe modal buttons----------------->*//
+//*<------------------------------------------------------->*//
 
+saveButton.addEventListener('click', function(event){
+  event.preventDefault();
+  console.log("saveButton Works")
+  
+      
+    localStorage.setItem('url', JSON.stringify(bookmarks));
+    console.log(localStorage.getItem("url"))
+    onclick = "window.open('./bookmarks.html')"
+
+    //* remember to clear the local storage on page load
+    
+})
+}
+catch(error){
+console.log(error);
+}
 //https://api.spoonacular.com/recipes/715477/card?apiKey=63aa00c3b9a14b4d81e35606c1528c2c
 //https://api.spoonacular.com/recipes/716429/card?apiKey=63aa00c3b9a14b4d81e35606c1528c2c

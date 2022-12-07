@@ -11,12 +11,28 @@ h1 {
       align-items: center;
       flex-direction: column;
 }
-#ingredients-container{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: row;
+#instructions{
+  margin-bottom: 40px;
 }
+ 
+#random-food-header {
+  color:#E76F51;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  flex-direction: row;
+  margin: 0px;
+}
+
+#random-food {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  color:#2A9D8F;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  flex-direction: row;
+  }
 
 #card-container1, #card-container2{
   display: flex;
@@ -26,31 +42,25 @@ h1 {
       gap: 20 px;
   padding: 20px;
   margin: 20;
+  margin-bottom: 40px;
 }
 
 
-image-fluid {
+.image-fluid {
   height: 100px;
   width: 150px;
 }
 #header-image{
-max-height: 480px;
-margin-bottom: 40px;
+  max-height: 480px;
+  margin-bottom: 40px;
 }
 
 .card1-img-top, .card2-img-top, .card3-img-top, .card4-img-top, .card5-img-top, .card6-img-top {
- background-image: url("https://unsplash.it/200/288?image=42") ;
   height: 200px;
- width: 288px;
- fill: 100%;
- border-radius: 10px 10px 0 0;
+  width: 288px;
+  border-radius: 10px 10px 0 0;
 }
 
-
-#ingredientImage {
-  height: 300px;
-  width: 400px;
-}
 
 .card-title{
   color: #3D405B;
@@ -65,8 +75,42 @@ margin-bottom: 40px;
   background-color: #2A9D8F;
   border-color: #2A9D8F;
 }
+.modal-title {
+  color: #E76F51;
+}
+#footer {
+  position:relative; 
+  bottom: 0; 
+      display: flex;
+      justify-content: center;
+  background-color: #E76F51;
+  color: white;
+  height: auto;
+  width:auto;
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+li, a{
+  color: goldenrod;
+ }
 
+ a:hover {
+  color: #2A9D8F;
+ }
 
+ #copyright {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+ }
+
+ingredient-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
 
 /* Media Screen for scalability///
 /////////////////////////////////
@@ -80,10 +124,12 @@ margin-bottom: 40px;
   #card-container1{
     flex-direction: column;
     align-items: center;
+    row-gap: 10px;
   }
   #card-container2{
     flex-direction: column;
     align-items: center;
+    row-gap: 10px;
   }
 }
 
