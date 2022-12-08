@@ -83,18 +83,22 @@ h1 {
   bottom: 0; 
       display: flex;
       justify-content: center;
-  background-color: #E76F51;
-  color: white;
+  /* background-color: #E76F51; */
+  border-top: 3px solid #E76F51;
+  border-bottom: 3px solid #E76F51;
+  color: #264653;
   height: auto;
   width:auto;
-  margin-top: 20px;
+  margin-top: 40px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
 li, a{
-  color: goldenrod;
+  color: #264653;
  }
-
+.a-salmon{
+color:white;
+}
  a:hover {
   color: #2A9D8F;
  }
@@ -111,6 +115,32 @@ ingredient-search {
   align-items: center;
   margin-top: 20px;
 }
+/* bookmark page */
+
+#bookmark-container-outside {
+  display: flex;
+  justify-content:flex-start;
+  flex-direction: column;
+  margin: 20px;
+  padding: 40px;
+  border: 1px solid  #E76F51;
+}
+
+#bookmark-header{
+  padding: 15px;
+  margin-bottom: 25px;;
+  font-weight: 500;
+  font-size: 1.2em;
+  color: white;
+  background-color: #E76F51;
+}
+
+
+
+
+
+
+
 
 /* Media Screen for scalability///
 /////////////////////////////////
