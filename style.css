@@ -66,6 +66,13 @@ h1 {
   color: #3D405B;
   margin-top: 5px;
 }
+
+.card1-body{
+  background-color: #F4F1DE;
+}
+
+
+
 .btn {
   background-color: #E76F51;
   border-color: #E76F51;
@@ -82,10 +89,11 @@ h1 {
   position:relative; 
   bottom: 0; 
       display: flex;
-      justify-content: center;
+      /* justify-content: center; */
   /* background-color: #E76F51; */
   border-top: 3px solid #E76F51;
   border-bottom: 3px solid #E76F51;
+  font-size: small;
   color: #264653;
   height: auto;
   width:auto;
@@ -93,12 +101,14 @@ h1 {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+.copyright{
+font-size: x-small;
+}
+
 li, a{
   color: #264653;
  }
-.a-salmon{
-color:white;
-}
+ 
  a:hover {
   color: #2A9D8F;
  }
@@ -108,15 +118,17 @@ color:white;
   justify-content: flex-start;
   align-items: flex-end;
  }
-
+/* 
 ingredient-search {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-}
-/* bookmark page */
+} */
 
+
+
+/* bookmark page */
 #bookmark-container-outside {
   display: flex;
   justify-content:flex-start;
@@ -134,10 +146,6 @@ ingredient-search {
   color: white;
   background-color: #E76F51;
 }
-
-
-
-
 
 
 
