@@ -25,6 +25,9 @@ let bookmarks = [];
 
 let randomFood = document.querySelector("#random-food");
 
+//* click sound
+let clickSound = new Audio("./click-21156.mp3");
+
 
 //*<------------- querySelectors ------------->*//
 //*<----------------------------------------->*//
@@ -39,8 +42,7 @@ let modalButton4 = document.querySelector('.modal-button4');
 let modalButton5 = document.querySelector('.modal-button5');
 let modalButton6 = document.querySelector('.modal-button6');
 
-//* modal save buttons //
-
+//* modal save buttons
 let saveButton = document.querySelector('#save-button');
 let saveSpot = document.querySelector('ul');
 
@@ -111,6 +113,7 @@ fetch(`https://api.spoonacular.com/food/trivia/random?apiKey=63aa00c3b9a14b4d81e
 
 searchButton.addEventListener('click', (event) => {
     event.preventDefault();
+    clickSound.play();
     console.log("Search Button Works")
     console.log("User Iput is working and prints out:")
     console.log(userInput.value);  
@@ -335,7 +338,7 @@ saveButton.addEventListener('click', function(event){
     onclick = "window.open('./bookmarks.html')"
 
     //* remember to clear the local storage on page load
-    
+
 })
 }
 catch(error){
